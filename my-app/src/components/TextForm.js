@@ -15,7 +15,8 @@ export default function TextForm(prop) {
     setText(event.target.value);
   }
   return (
-    <div>
+  <>
+    <div className='container'>
         <h1>{prop.heading}</h1>
         <div className="form-group mb-3">
        
@@ -23,5 +24,11 @@ export default function TextForm(prop) {
         </div>
         <button className='btn btn-primary' onClick={handleUpClick}>Convert to Uppercase</button>
     </div>
+    <div className="container my-3">
+       <h1>Your text summery</h1>
+       <p>{text.split(" ").length} word and {text.length} character</p>
+       <p>{0.008 * text.split(" ").length} Minutes Read</p>
+    </div>
+  </>
   )
 }
